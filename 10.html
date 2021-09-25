@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var n=123456.789;
+			n.toFixed(0);   //返回字符串"123457"
+			n.toFixed(2);   //返回字符串"123456.79"
+			n.toFixed(5);   //返回字符串"123456.78900"
+			n.toExponential(1);     //返回字符串"1.2e+5"
+			n.toExponential(3);     //返回字符串"1.235e+5"
+			n.toPrecision(4);       //返回字符串"1.235e+5"
+			n.toPrecision(7);       //返回字符串"123456.8"
+			n.toPrecision(10);      //返回字符串"123456.7890"
+
+		</script>
+	</body>
+</html>

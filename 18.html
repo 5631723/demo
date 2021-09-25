@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 表单用于提交数据到服务器端 -->
+		<form action="https://www.baidu.com">
+			<input type="text" id='txt' name='title' value='test!'>
+			<h3>你们喜欢的城市是那个？<span id='msg'></span></h3>
+			<select name="city" id="city">
+				<option value="">请选择</option>
+				<option value="wuhan">武汉</option>
+				<option value="shanghai">上海</option>
+				<option value="shenzhen">深圳</option>
+				<option value="beijing">北京</option>
+			</select>
+			<br>
+			<!-- 	<input type="button" value='我是input_button' />
+			<br> -->
+			<!-- 		<button>我是button</button> -->
+			<br>
+			<input type="submit" value='我是Input_submit' />
+			<br>
+			<!-- <input type="reset" value='我是重置按钮reset'> -->
+
+			<h3 style='color:red' id='error'></h3>
+
+
+		</form>
+	</body>
+</html>
+
+<script>
+	//onchange和select控件更配哟！
+	document.getElementById('city').onchange = function() {
+		document.getElementById('msg').innerText = this.value;
+	}
+
+	//将控件保存在变量中，方便自己调用
+	var txt = document.getElementById('txt');
+
+	//失去焦点时触发
+	txt.onblur = function() {
+		console.log('失去焦点')
+	}
+
+	//获得焦点时触发
+	txt.onfocus = function() {
+		console.log('获得焦点')
+	}
+
+	//当内容改变时触发
+	txt.onchange = function() {
+		console.log('我的内容改变了')
+	}
+
+	//获取到页面上的第一个表单
+	document.getElementsByTagName('form')[0].onsubmit = function() {
+
+		//下面两个判断用户输入不能为空，如果为空，就拒绝默认的表填提交动作
+		if (txt.value == "") {
+			document.getElementById('error').innerText = '标题必须要写'
+			return false;
+		}
+		if (document.getElementById('city').value == "") {
+			document.getElementById('error').innerText = '城市必须要选'
+			return false;
+		}
+	}
+</script>

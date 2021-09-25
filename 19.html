@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>p53页练习</title>
+		<style>
+			h3 {
+				border-bottom: 3px #FF0000 solid;
+				width: 100px;
+			}
+
+			div {
+				height: 35px;
+			}
+
+			div span {
+				width: 80px;
+				display: inline-block;
+			}
+
+			button {
+				background-color: #109EF0;
+				border: 0px;
+				width: 80px;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="">
+			<h3>购物信息</h3>
+			<!-- <hr> -->
+			<div><span>账号</span><input type="text" id='account' placeholder="在此处填写账号"></div>
+			<div><span>选择商品</span>
+				<select name="product" id="product">
+					<option value="0">请选择一项</option>
+					<option value="2">怡宝矿泉水</option>
+					<option value="4">青梅绿茶</option>
+					<option value="8">红牛</option>
+					<option value="3.5">健力宝</option>
+					<option value="5">元气森林</option>
+				</select>
+			</div>
+			<div><span>单价</span><input type="text" id='price' readonly="readonly" value='0.00' /> </div>
+			<div><span>数量</span><input type="text" id='number' value='1'></div>
+			<div><span>总计</span><input type="text" id='count' readonly="readonly" value='0.00'></div>
+			<div><span></span><button>确认</button></div>
+		</form>
+	</body>
+</html>
+
+<script>
+	document.getElementsByTagName('button')[0].onclick = function() {
+
+		//账号不能为空
+		if (document.getElementById('account').value == "") {
+			alert('你好歹写个账号')
+			return false;
+		}
+
+		var num = document.getElementById('number').value;
+
+		//购买数量不能是Null,"",0,或非数字，如果是，则默认给控件赋值一个1
+		if (num == '' || num == 0 || isNaN(parseInt(num))) {
+			document.getElementById('number').value = 1
+			alert('至少你得买一个吧。')
+			return false;
+		} else {
+			document.getElementById('number').value = parseInt(num)
+		}
+
+		//判断价格是不是非0
+		if (parseFloat(document.getElementById('price').value) == 0) {
+			alert('你起码得选一个商品吧！');
+			return false;
+		}
+
+		//计算总价
+		sumTotal()
+
+		return false;
+	}
+
+	//改变选择商品后，更新下面的价格控件的值
+	document.getElementById('product').onchange = function() {
+		document.getElementById('price').value = parseFloat(this.value).toFixed(2);
+	}
+
+	function sumTotal() {
+		document.getElementById('count').value = (parseFloat(document.getElementById('price').value) * parseInt(document
+			.getElementById('number').value)).toFixed(2);
+
+		alert("来吧！你是支付宝，还是微信，你需要支付" + document.getElementById('count').value + "元");
+	}
+	
+	document.getElementById('number').onchange=sumTotal;
+</script>

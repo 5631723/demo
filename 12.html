@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			table {
+				border: 2px #ccc solid;
+			}
+
+			;
+		</style>
+	</head>
+	<body>
+		<table id="t1">
+			<tr>
+				<td>标题</td>
+				<td>栏目</td>
+				<td>状态</td>
+				<td>发布人</td>
+				<td>点击量</td>
+			</tr>
+
+		</table>
+	</body>
+</html>
+
+
+<script>
+	var table = document.getElementById('t1');
+
+	var row1 = '<tr><td>买车时是选“低配车”还是“高配车”？</td><td>汽车</td><td>开放浏览</td><td>小莱</td><td>1000</td></tr>';
+	var row2 = '<tr><td>专访库里：用正确方式终结比赛</td><td>体育</td><td>开放浏览</td><td>小格</td><td>10000</td></tr>';
+	var title = table.innerHTML;
+
+	table.innerHTML = title + row1 + row2;
+	
+	var rows=document.getElementsByTagName('tr');
+	
+	//几乎所有的样式都可以在style属性中找到
+	rows[0].style.backgroundColor='#CCCCCC';
+	
+</script>

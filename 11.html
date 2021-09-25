@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<style>
+		.cc{
+/* 			width: 200px;
+			height:200px; 
+			border: 3px #0094ff solid;*/
+			margin-left: 300px;
+			border-radius: 50%;
+			text-align: center;
+			/* background-color: #994466; */
+			color: #fff;
+		}
+		</style>
+		
+	</head>
+	<body>
+		<form action="" id="f1">
+			<input type="text" id="t1" value="你能找到我吗？" />
+
+			<input type="button" value='点我' id='btn' />
+
+
+			<!-- 获取元素的4中方式 -->
+			
+			<!-- div表示标签名字 -->
+			<!-- id表示唯一的一个名称 -->
+			<!-- name和id一样也表示名字，但是它可以重复 -->
+			<!-- class 原本使用来样式名称（类别）的，但也广泛用于命名 -->
+			<div id='d1' name='dd' class='cc'>
+				<p>
+					wenzi
+				</p>
+			</div>
+
+
+
+
+
+		</form>
+	</body>
+</html>
+
+<script type="text/javascript">
+	// btn.onclick = function() {
+	// 	t1.value = '我抓到你了'
+
+	// 	// 获取或修改元素内容的两种方式
+	// 	// innerHTML 获取当前标记内标记和文字
+	// 	// innerText 获取当前标记内的文字
+	// 	// var html = document.getElementById('d1').innerText;
+	// 	// alert(html);
+
+	// 	var mydd = document.getElementsByName('dd');
+
+	// 	//以控制台日志的形式显示内容（用于测试数据）
+	// 	console.log(mydd)
+
+	// 	document.write(mydd[0].innerText);
+		
+	// 	// 修改元素样式（css）、属性
+	// 	var mycc=document.getElementById('d1')
+		
+	// 	console.log(mycc)
+		
+		
+
+	// }
+	
+	
+	var mycc=document.getElementsByClassName('cc')[0];
+	mycc.style.width='200px';
+	mycc.style.height='200px';
+	mycc.style.border='3px blue solid';
+	mycc.style.backgroundColor='red';
+	
+</script>

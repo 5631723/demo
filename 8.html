@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var a = 61;
+			//typeof 获取变量的类型
+			if (typeof(a) == 'number') {
+				document.write(a + 1);
+			} else {
+				document.write('对不起，无法计算');
+			}
+
+			document.write("123的数据类型：" + typeof 123);
+			document.write("<br>");
+			document.write('"123"的数据类型是：' + typeof "123");
+			document.write("<br>");
+			var flag = true;
+			document.write("变量flag当前存储的值是true,他的数据类型是：" + typeof flag);
+			document.write("<br>");
+			var obj = null;
+			document.write("变量obj当前存储的值是null,他的数据类型是：" + typeof obj);
+			document.write("<br>");
+			var undef;
+			document.write("变量undef未赋予初始值,他的数据类型是：" + typeof undef);
+		</script>
+	</body>
+</html>

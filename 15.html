@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#dd {
+				width: 100px;
+				height: 100px;
+				background-color: #f00;
+			}
+
+			#txt {
+				width: 300px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div id='dd'></div>
+		<br>
+		<input type="text" id='txt' value='' placeholder="在此处输入任意内容，敲击回车发送">
+		<span id='msg'></span>
+
+	</body>
+</html>
+
+<script>
+	//事件目标 dd
+	var mydiv = document.getElementById('dd');
+
+	//事件处理 （函数）
+	function suoxiao() {
+		mydiv.style.width = '50px';
+		mydiv.style.height = '50px';
+		mydiv.style.backgroundColor = 'yellow'
+	}
+
+	//点击事件 click,mouseover,mouseout,mousemove
+	mydiv.ondblclick = suoxiao;
+
+	mydiv.onmouseenter = mymouseover;
+	mydiv.onmouseleave = mymouseout;
+	mydiv.onmousemove = mymousemove;
+
+	function mymouseover() {
+		console.log('你已触碰到我')
+	}
+
+	function mymouseout() {
+		console.log('你已离开我')
+	}
+
+	function mymousemove() {
+		console.log('你不要一直摸我')
+	}
+	////////////////////////////////键盘案例
+
+	var tt = document.getElementById('txt');
+
+	function viewcode(e) {
+		if (e.code == 'Enter') {
+			document.getElementById('msg').innerHTML = tt.value
+		}
+		console.log(e);
+	}
+
+	tt.onkeyup = viewcode;
+</script>

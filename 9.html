@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id='one'>+
+		<input type="text" id='two'>=
+		<input type="text" id='sum' readonly="readonly">
+		<br>
+		<input type="button" value='加法计算' id='compute'>
+		<input type="button" value='除法计算' id='chu'>
+		
+		<script>
+		
+		document.getElementById('compute').onclick=function(){
+			var a=document.getElementById('one').value;
+			var b=document.getElementById('two').value;
+			var c=parseFloat(a)+parseFloat(b);
+			document.getElementById('sum').value=c;
+		}
+		
+		document.getElementById('chu').onclick=function(){
+			var a=document.getElementById('one').value;
+			var b=document.getElementById('two').value;
+			//parseFloat和parseInt都是将字符串转换成数字
+			//但是我们在做计算时，应该多使用parseFloat。
+			var c=parseFloat(a)/parseFloat(b);
+			document.getElementById('sum').value=c;
+		}
+		
+		</script>
+		
+	</body>
+</html>
